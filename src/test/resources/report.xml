@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Marketplace" parallel="false" thread-count="3">
+
+	<listeners>
+		<!--
+			Chỉ dùng RetryListener cho những testcase không bị phụ thuộc nhau
+			Những test case chạy theo luồng thì không nên sử dụng RetryListener
+			Nếu datatest là động (data test được tạo trong quá trình run test) thì ko nên dùng retry test
+		-->
+<!--		<listener class-name="retryListener.RetryListener"/>-->
+		<listener class-name="reportConfig.AllureTestListener" />
+	</listeners>
+
+<!--	<parameter name="url" value="https://marketplace.uat.thetanarena.com/" />-->
+		<parameter name="url" value="https://staging.marketplace.thetanarena.com/" />
+<!--		<parameter name="url" value="http://google.com/" />-->
+
+	<test name="RUN ON CHROME">
+		<parameter name="browser" value="CHROME"/>
+		<classes>
+<!--			<class name="hero_rental.HR_TC002_RentOutAHeroSuccessfullyWithMaxBattles"/>-->
+<!--			<class name="hero_rental.HR_TC003_RentOutAHeroSuccessfullyWithValidNumberOfBattles"/>-->
+<!--			<class name="hero_rental.HR_TC005_CanNotRentOutAHeroWhenBattleForRentIsGreaterThanTheNumberOfRemainingBattles"/>-->
+<!--			<class name="hero_rental.HR_TC006_CanNotRentOutAHeroWhenPriceForRentIsLessThanTheMinPriceAllowed"/>-->
+<!--			<class name="hero_rental.HR_TC007_CanNotRentOutAHeroWhenUncheckingTheConfirmCheckBox"/>-->
+<!--			<class name="hero_rental.HR_TC008_VerifyTheTransactionFeeCalculatedCorrectly"/>-->
+		<class name="hero_rental.HR_TC010_CancelRentOutTransaction"/>
+<!--		<class name="hero_rental.HR_TC013_CancelStopRentingAHero"/>-->
+<!--			<class name="hero_trading.HR_TC001_SellAHeroSuccessfully"/>-->
+<!--		<class name="hero_trading.HR_TC002_SellAHeroThatWasBoughtFromMarketplaceSuccessfully"/>-->
+<!--		<class name="hero_trading.HR_TC003_SellAHeroThatWasCanceledSellingBefore"/>-->
+<!--			<class name="hero_trading.HR_TC004_CancelSellingAHero"/>-->
+<!--			<class name="hero_trading.HR_TC005_CanNotSellAHeroWithPriceThatIsLessThanMinPrice"/>-->
+<!--			<class name="hero_trading.HR_TC006_CanNotSellAHeroWithPriceThatIsGreaterThanMaxPrice"/>-->
+<!--			<class name="hero_trading.HR_TC007_CanNotSellAHeroWhenNotInputPrice"/>-->
+<!--			<class name="hero_trading.HR_TC008_CanNotSellAHeroHavingStatusSelling"/>-->
+<!--			<class name="hero_trading.HR_TC013_CancelSellingTransaction"/>-->
+<!--		<class name="hero_trading.HR_TC014_StopSellingAHeroSuccessfully"/>-->
+<!--		<class name="hero_trading.HR_TC015_StopSellingAHeroUnsuccessfullyBecauseOfNotEnoughBNBForGasFee"/>-->
+<!--		<class name="hero_trading.HT_TC017_BuyAHeroSuccessfully"/>-->
+<!--			<class name="hero_trading.HT_TC018_BuyAHeroUnsuccessfullyBecauseOfNotEnoughBalance"/>-->
+<!--		<class name="hero_trading.HT_TC019_BuyAHeroUnsuccessfullyBecauseOfNotEnoughBNBForGasFee"/>-->
+		</classes>
+	</test>
+</suite>
